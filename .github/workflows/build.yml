@@ -24,3 +24,17 @@ jobs:
         with:
           name: demo-xxx
           path: ${{ github.workspace }}/build/
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          prerelease: ${{ contains(github.ref, '-') }}
+          draft: false
+          files: |
+            demo-xxx
+          body: |
+            ## Changelogs
+            * 1
+            * 2
