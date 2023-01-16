@@ -14,6 +14,7 @@ jobs:
         run: |
           mkdir build && cd build
           cmake ..
+          make
 
       - name: Upload
         uses: actions/upload-artifact@v2
