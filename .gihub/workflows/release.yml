@@ -1,0 +1,12 @@
+name: Demo Release CI
+on:
+  push:
+    tags:
+      - "*.*.*"
+jobs:
+  build:
+    name: Release
+    runs-on: windows-2022
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
